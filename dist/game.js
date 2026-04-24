@@ -24,6 +24,15 @@ const themes = {
     snakeBody: '#0097a7',
     food: '#ff4081',
     obstacle: '#ff5722'
+  },
+  forest: {
+    name: '森林主题',
+    canvasBackground: '#1b3a1b',
+    gridColor: 'rgba(100, 180, 100, 0.1)',
+    snakeHead: '#8bc34a',
+    snakeBody: '#689f38',
+    food: '#e91e63',
+    obstacle: '#5d4037'
   }
 };
 
@@ -382,7 +391,7 @@ class GameEngine {
    * @returns {boolean}
    */
   checkObstacleCollision(head) {
-    if (!this.obstacle) return false;
+    if (!this.obstacleMode || !this.obstacle) return false;
     return this.obstacle.positions.some(
       obs => obs.x === head.x && obs.y === head.y
     );
@@ -725,6 +734,8 @@ class GameEngine {
     if (enabled && !this.obstacle) {
       this.obstacle = new Obstacle(this.gridSize, 15);
       this.obstacle.reset(this.getExcludedPositions());
+    } else if (!enabled) {
+      this.obstacle = null;
     }
 
     if (this.status === 'idle') {

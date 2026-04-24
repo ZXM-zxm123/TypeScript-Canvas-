@@ -42,6 +42,25 @@
   --btn-disabled: #444444;
 }
 
+[data-theme="forest"] {
+  --bg-primary: #1a3a1a;
+  --bg-secondary: #2a4a2a;
+  --text-primary: #e8f5e9;
+  --text-secondary: #a5d6a7;
+  --border-color: #388e3c;
+  --canvas-bg: #1b3a1b;
+  --grid-color: rgba(100, 180, 100, 0.1);
+  --accent: #8bc34a;
+  --accent-hover: #7cb342;
+  --btn-primary: #8bc34a;
+  --btn-primary-hover: #7cb342;
+  --btn-secondary: #795548;
+  --btn-secondary-hover: #6d4c41;
+  --btn-warning: #e91e63;
+  --btn-warning-hover: #c2185b;
+  --btn-disabled: #4a5a4a;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg-primary);
