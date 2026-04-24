@@ -325,7 +325,7 @@ class GameEngine {
   }
 
   private checkObstacleCollision(head: Point): boolean {
-    if (!this.obstacle) return false;
+    if (!this.obstacleMode || !this.obstacle) return false;
     return this.obstacle.positions.some(
       obs => obs.x === head.x && obs.y === head.y
     );
@@ -642,6 +642,8 @@ class GameEngine {
     if (enabled && !this.obstacle) {
       this.obstacle = new Obstacle(this.gridSize, 15);
       this.obstacle.reset(this.getExcludedPositions());
+    } else if (!enabled) {
+      this.obstacle = null;
     }
 
     if (this.status === 'idle') {
