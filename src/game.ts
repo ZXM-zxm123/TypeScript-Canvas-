@@ -33,6 +33,15 @@ const themes: Record<string, GameTheme> = {
     snakeBody: '#0097a7',
     food: '#ff4081',
     obstacle: '#ff5722'
+  },
+  forest: {
+    name: '森林主题',
+    canvasBackground: '#1b3a1b',
+    gridColor: 'rgba(100, 180, 100, 0.1)',
+    snakeHead: '#8bc34a',
+    snakeBody: '#689f38',
+    food: '#e91e63',
+    obstacle: '#5d4037'
   }
 };
 
