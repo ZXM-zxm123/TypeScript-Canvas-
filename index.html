@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贪吃蛇游戏 - TypeScript Canvas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <header class="game-header">
+      <h1>贪吃蛇</h1>
+      <div class="score-board">
+        <div class="score-item">
+          <span class="label">当前分数</span>
+          <span class="value" id="current-score">0</span>
+        </div>
+        <div class="score-item">
+          <span class="label">最高分</span>
+          <span class="value" id="high-score">0</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-main">
+      <div class="canvas-wrapper">
+        <canvas id="game-canvas" width="400" height="400"></canvas>
+        <div id="game-overlay" class="game-overlay hidden">
+          <div class="overlay-content">
+            <h2 id="overlay-title">游戏结束</h2>
+            <p id="overlay-score">最终分数: 0</p>
+            <p id="overlay-message"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="game-footer">
+      <div class="controls">
+        <button id="btn-start" class="btn primary">开始游戏</button>
+        <button id="btn-pause" class="btn secondary" disabled>暂停</button>
+        <button id="btn-restart" class="btn warning" disabled>重新开始</button>
+      </div>
+
+      <div class="options">
+        <div class="option-group">
+          <label>
+            <input type="checkbox" id="obstacle-mode">
+            障碍物模式
+          </label>
+        </div>
+        <div class="option-group">
+          <label>主题配色:</label>
+          <select id="theme-select">
+            <option value="classic">经典主题</option>
+            <option value="dark">暗夜主题</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="instructions">
+        <h3>操作说明</h3>
+        <ul>
+          <li>方向键 (↑ ↓ ← →): 控制蛇的移动方向</li>
+          <li>空格键: 加速移动</li>
+          <li>Shift 键: 减速移动</li>
+          <li>P 键: 暂停/继续</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <script src="dist/game.js"></script>
+</body>
+</html>
